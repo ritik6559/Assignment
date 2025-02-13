@@ -1,10 +1,7 @@
 package com.ritik.assignment.entities;
 
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -27,13 +24,19 @@ public class Contact {
 
     private String email;
 
+    @Column(name = "linked_id")
     private Long linkedId;
 
+    @Enumerated(EnumType.STRING)
+    private LinkPrecedence linkPrecedence;
+
     private LocalDateTime createdAt = LocalDateTime.now();
-
     private LocalDateTime updatedAt = LocalDateTime.now();
-
     private LocalDateTime deletedAt = LocalDateTime.now();
+
+    public enum LinkPrecedence {
+        PRIMARY, SECONDARY
+    }
 
 }
 
