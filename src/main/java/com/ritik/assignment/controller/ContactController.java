@@ -20,6 +20,7 @@ public class ContactController {
 
     private final ContactService contactService;
 
+
     @PostMapping("/identify")
     public ResponseEntity<ContactResponse> identify(@RequestBody IdentifyRequest request) {
         try {
