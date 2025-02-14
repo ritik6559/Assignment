@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 import static org.springframework.http.HttpStatus.INTERNAL_SERVER_ERROR;
 
 @RestController
-@RequestMapping("${api.prefix}")
+@RequestMapping
 @RequiredArgsConstructor
 public class ContactController {
 
